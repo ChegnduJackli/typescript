@@ -16,8 +16,35 @@ function greeter(person) {
 }
 var user = "Jane User";
 document.body.innerHTML = greeter(user);
-var message = "hello world";
+var message = "hello world 2";
 console.log(message);
+var someValue2 = "this is a string";
+var strLength2 = someValue2.length;
+console.log('strLength2', strLength2);
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 1] = "Red";
+    Color[Color["Green"] = 2] = "Green";
+    Color[Color["Blue"] = 4] = "Blue";
+})(Color || (Color = {}));
+var c = Color.Green;
+console.log('c', c); //2
+var colName = Color[2]; //green
+//当你只知道一部分数据的类型时，any类型也是有用的。 比如，你有一个数组，它包含了不同的类型的数据
+var list = [1, true, "free"];
+list[1] = 100;
+console.log('list', list); //1,100,free
+//尽量避免使用屏蔽
+function f5(condition, x) {
+    if (condition) {
+        var x_1 = 100;
+        return x_1;
+    }
+    return x;
+}
+console.log('f5 false', f5(false, 0)); // returns 0
+console.log('f5 true', f5(true, 0)); // returns 100
+//void为没有返回类型 当一个函数没有返回值时，你通常会见到其返回值类型是 void：
 var Site = /** @class */ (function () {
     function Site() {
     }
@@ -333,4 +360,3 @@ function objfn() {
     };
     sites.sayHello();
 }
-//# sourceMappingURL=hello.js.map
